@@ -782,3 +782,110 @@ footer hr{
     color:#888;
 
 }
+/* ==========================
+   MOBILE NAVIGATION
+========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+@media (max-width:768px){
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px;
+        position:relative;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        position:absolute;
+        top:80px;
+        left:0;
+        background:rgba(20,20,40,.95);
+        backdrop-filter:blur(15px);
+        padding:20px 0;
+        text-align:center;
+        border-radius:0 0 20px 20px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+}
+.hero h1{
+    font-size:2.8rem;
+    line-height:1.2;
+    word-break:break-word;
+}
+
+.hero h2{
+    font-size:2rem;
+}
+
+.hero h3{
+    font-size:1.3rem;
+}
+
+.hero p{
+    font-size:1rem;
+    padding:0 15px;
+}
+
+.buttons{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.btn1,
+.btn2{
+    width:220px;
+    text-align:center;
+}
+/* ==========================
+   TYPING ANIMATION
+========================== */
+
+.cursor{
+    color:#00c6ff;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+/* ==========================
+   SCROLL REVEAL
+========================== */
+
+.hidden{
+    opacity:0;
+    transform:translateY(80px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
