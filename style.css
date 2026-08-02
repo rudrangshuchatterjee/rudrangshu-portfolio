@@ -889,3 +889,142 @@ footer hr{
     opacity:1;
     transform:translateY(0);
 }
+/* ==========================
+   TECH STACK
+========================== */
+
+.tech-stack{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:25px 0;
+}
+
+.tech-stack span{
+
+    background:rgba(255,255,255,.12);
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.3s;
+
+}
+
+.tech-stack span:hover{
+
+    transform:translateY(-3px);
+
+    background:#00c6ff;
+
+    color:black;
+
+}
+/* ==========================
+   MY JOURNEY
+========================== */
+
+#journey{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.journey-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.journey-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:35px;
+    transition:.3s;
+}
+
+.journey-card:hover{
+    transform:translateY(-10px);
+}
+
+.journey-card h3{
+    font-size:50px;
+    color:#00c6ff;
+}
+
+.journey-card p{
+    margin-top:10px;
+    color:#ddd;
+}
+/* ==========================
+   THEME BUTTON
+========================== */
+
+.theme-btn{
+    background:transparent;
+    border:2px solid #00c6ff;
+    color:white;
+    font-size:22px;
+    padding:10px 15px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.theme-btn:hover{
+    transform:rotate(20deg) scale(1.1);
+}
+
+/* Light Theme */
+
+body.light-mode{
+    background:#f4f7fb;
+    color:#222;
+}
+
+body.light-mode nav{
+    background:rgba(255,255,255,.9);
+}
+
+body.light-mode .project-card,
+body.light-mode .about-card,
+body.light-mode .journey-card,
+body.light-mode .contact-card{
+    background:white;
+    color:#222;
+}
+
+body.light-mode p,
+body.light-mode h2,
+body.light-mode h3{
+    color:#222;
+}
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+
+#topBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    display:none;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00c6ff,#7b5cff);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,198,255,.4);
+    transition:all .3s ease;
+    z-index:1000;
+}
+
+#topBtn:hover{
+    transform:translateY(-5px) scale(1.1);
+}

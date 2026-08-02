@@ -87,3 +87,83 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 hiddenElements.forEach((el) => observer.observe(el));
+// ==========================
+// Animated Counters
+// ==========================
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+
+        const increment = Math.ceil(target / 50);
+
+        if(current < target){
+
+            counter.innerText = current + increment;
+
+            setTimeout(updateCounter,40);
+
+        }else{
+
+            counter.innerText = target;
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+// ==========================
+// DARK / LIGHT MODE
+// ==========================
+
+const themeButton = document.getElementById("theme-toggle");
+
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+    themeButton.textContent = "☀️";
+}
+
+themeButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        themeButton.textContent = "☀️";
+        localStorage.setItem("theme","light");
+    }else{
+        themeButton.textContent = "🌙";
+        localStorage.setItem("theme","dark");
+    }
+
+});
+// ==========================
+// Back To Top Button
+// ==========================
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
